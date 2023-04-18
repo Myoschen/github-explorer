@@ -1,13 +1,14 @@
 import {Outlet} from 'react-router-dom';
-import Switch from './ui/switch';
+import useDarkMode from '@/hooks/use-dark-mode';
 import {
   GitHubLogoIcon,
   IdCardIcon,
   MoonIcon,
   SunIcon,
 } from '@radix-ui/react-icons';
-import useDarkMode from '@/hooks/use-dark-mode';
+import ScrollToTopButton from './scroll-to-top-button';
 import {Button} from './ui';
+import Switch from './ui/switch';
 
 function RootLayout() {
   const [theme, setTheme] = useDarkMode();
@@ -50,6 +51,7 @@ function RootLayout() {
           }}
         />
       </div>
+      <ScrollToTopButton />
     </div>
   );
 }
