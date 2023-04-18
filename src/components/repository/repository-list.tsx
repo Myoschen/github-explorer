@@ -8,10 +8,11 @@ interface Props {
 
 function RepositoryList({query}: Props) {
   const {hasMore, nextPage, repositories} = useInfiniteRepositories(query);
+  const observerRef = useRef<IntersectionObserver | null>(null);
   const lastElementRef = useRef<HTMLDivElement>(null);
 
-  const onIntersection = useCallback(
-    (entries: IntersectionObserverEntry[]) => {
+  const onIntersection: IntersectionObserverCallback = useCallback(
+    (entries, observer) => {
       const firstEntry = entries[0];
       if (firstEntry.isIntersecting) {
         nextPage();
@@ -21,15 +22,21 @@ function RepositoryList({query}: Props) {
   );
 
   useEffect(() => {
-    const observer = new IntersectionObserver(onIntersection, {
+    observerRef.current = new IntersectionObserver(onIntersection, {
       root: null,
       rootMargin: '0px',
       threshold: 1.0,
     });
-    if (lastElementRef.current && hasMore)
-      observer.observe(lastElementRef.current);
-    return () => observer.disconnect();
-  }, [hasMore]);
+    if (lastElementRef.current && observerRef.current) {
+      observerRef.current.observe(lastElementRef.current);
+    }
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+        observerRef.current = null;
+      }
+    };
+  }, [onIntersection]);
 
   return (
     <div className="mt-8 grid gap-4 sm:grid-cols-2">

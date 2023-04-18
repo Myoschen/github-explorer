@@ -42,7 +42,7 @@ function useInfiniteRepositories(query: string) {
 
   const nextPage = useCallback(() => {
     if (hasMore) setPage((prev) => prev + 1);
-  }, [setPage, hasMore]);
+  }, [hasMore]);
 
   useEffect(() => {
     if (previousQuery !== query) {
