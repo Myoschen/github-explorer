@@ -36,9 +36,15 @@ Build a github explorer with React.
 
 ## :sparkles: Features ##
 
-- [x] infinite scrolling to fetch data
-- [ ] filters (sort by, order, etc...)
-- [ ] repository detail page
+- Route
+  - [x] repository home page
+  - [x] repository search page
+  - [ ] repository detail page
+
+- features
+  - [x] infinite scrolling to fetch data
+  - [x] scroll to top
+  - [ ] filters (sort by, order, etc...)
 
 ## :rocket: Technologies ##
 
