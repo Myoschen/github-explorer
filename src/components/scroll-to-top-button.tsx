@@ -9,8 +9,8 @@ function ScrollToTopButton() {
 
   const handler = useCallback(() => {
     if (!document.scrollingElement) return;
-    const {scrollTop} = document.scrollingElement;
-    if (scrollTop > 0) {
+    const {scrollTop, clientHeight} = document.scrollingElement;
+    if (scrollTop > clientHeight) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
