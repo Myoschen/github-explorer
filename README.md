@@ -1,90 +1,44 @@
-<h1 align="center">Github Explorer</h1>
-
-<p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/Myoschen/github-explorer?color=56BEB8">
-
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/Myoschen/github-explorer?color=56BEB8">
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Myoschen/github-explorer?color=56BEB8">
-
-  <img alt="License" src="https://img.shields.io/github/license/Myoschen/github-explorer?color=56BEB8">
+<p align='center'>
+  <img src='logo.png' alt='project name' width='120' />
 </p>
 
-<!-- Status -->
+<h1 align='center'>Github Explorer</h1>
 
-<h4 align="center">
- 🚧  Github Explorer 🚀 Under construction...  🚧
-</h4>
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/Myoschen/github-explorer/main?style=flat-square&labelColor=%23222222&color=%23111111)
+![GitHub language count](https://img.shields.io/github/languages/count/Myoschen/github-explorer?style=flat-square&labelColor=%23222222&color=%23111111)
+![GitHub issues](https://img.shields.io/github/issues/Myoschen/github-explorer?style=flat-square&labelColor=%23222222&color=%23111111)
+![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/Myoschen/github-explorer/main?style=flat-square&label=version&labelColor=%23222222&color=%23111111)
+![GitHub top language](https://img.shields.io/github/languages/top/Myoschen/github-explorer?style=flat-square&labelColor=%23222222&color=%23111111)
+![GitHub License](https://img.shields.io/github/license/Myoschen/github-explorer?style=flat-square&labelColor=%23222222&color=%23111111)
 
-<hr>
+Explore github repositories.
 
-<p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0;
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/Myoschen" target="_blank">Author</a>
-</p>
+## Tech stack
 
-<br>
-
-## :dart: About ##
-
-Build a github explorer with React.
-
-## :sparkles: Features ##
-
-- Route
-  - [x] repository home page
-  - [x] repository search page
-  - [ ] repository detail page
-
-- features
-  - [x] infinite scrolling to fetch data
-  - [x] scroll to top
-  - [ ] filters (sort by, order, etc...)
-
-## :rocket: Technologies ##
-
-The following tools were used in this project:
-
-- [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://www.tailwindcss.com/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Shadcn UI](https://ui.shadcn.com)
+- [Lucide Icons](https://lucide.dev/)
 - [Framer Motion](https://www.framer.com/motion/)
-- [Radix UI](https://www.radix-ui.com/)
-- [axios](https://github.com/axios/axios)
 
-## :white_check_mark: Requirements ##
-
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
-
-## :checkered_flag: Starting ##
+## Usage
 
 ```bash
-# Clone this project
-$ git clone https://github.com/Myoschen/github-explorer
+# clone the repository
+git clone https://github.com/Myoschen/github-explorer.git
+# change directory
+cd github-explorer
 
-# Access
-$ cd github-explorer
+# install deps
+pnpm install
 
-# Install dependencies
-$ pnpm i
+# start server
+pnpm run dev
 
-# Run the project
-$ pnpm dev
-
-# The server will initialize in the <http://localhost:5173>
+# open browser and visit http://localhost:5173
 ```
 
-## :memo: License ##
+## License
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
-
-Made with :heart: by <a href="https://github.com/Myoschen" target="_blank">Myos</a>
-
-&#xa0;
-
-<a href="#top">Back to top</a>
+Licensed under the [MIT License](./LICENSE).
