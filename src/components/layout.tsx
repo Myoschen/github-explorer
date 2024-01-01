@@ -26,7 +26,7 @@ export default function Layout() {
       </div>
       <div className={'absolute left-4 top-4'}>
         <Button variant={'outline'} asChild={true} size={'sm'}>
-          <a href={'https://github.com/Myoschen/github-explorer'} target={'_parent'} rel={'noreferrer'}>
+          <a href={'https://github.com/Myoschen/github-explorer'} target={'_blank'} rel={'noreferrer'}>
             <GithubIcon className={'mr-2 size-4'} />
             <span>{'Github'}</span>
           </a>
