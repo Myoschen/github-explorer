@@ -60,12 +60,12 @@ export default function ResultPage() {
             />
           ))
         )}
-        {hasMore && (
-          <div ref={triggerRef} className={'p-4'}>
-            <Loader2Icon className={'animate-spin'} />
-          </div>
-        )}
       </div>
+      {hasMore && (
+        <div ref={triggerRef} className={'flex items-center justify-center py-8'}>
+          <Loader2Icon className={'animate-spin'} />
+        </div>
+      )}
     </main>
   )
 }
