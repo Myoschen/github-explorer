@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { ArrowUpIcon } from '@radix-ui/react-icons'
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { Button } from '@/components/ui'
+import { Button } from '@/components/ui/button'
 import { throttle } from '@/lib/utils'
 
 export default function ScrollToTop() {
@@ -33,12 +33,9 @@ export default function ScrollToTop() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <Button
-              icon={<ArrowUpIcon />}
-              className={'p-2'}
-              type={'button'}
-              onClick={scrollToTop}
-            />
+            <Button onClick={scrollToTop}>
+              <ArrowUpIcon />
+            </Button>
           </motion.div>
           )
         : null}

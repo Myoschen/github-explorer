@@ -1,4 +1,4 @@
-import { createContext, type ReactNode, useContext, useEffect } from 'react'
+import { createContext, type ReactNode, useCallback, useContext, useEffect } from 'react'
 
 import useLocalStorage from '@/hooks/use-local-storage'
 
@@ -6,11 +6,13 @@ type Theme = 'light' | 'dark'
 
 interface ThemeState {
   theme: Theme
+  toggleTheme: () => void
   setTheme: (theme: Theme) => void
 }
 
 const ThemeContext = createContext<ThemeState>({
   theme: 'light',
+  toggleTheme: () => {},
   setTheme: () => {},
 })
 
@@ -20,6 +22,11 @@ interface ThemeProviderProps {
 
 export default function ThemeProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useLocalStorage<Theme>('theme', 'light')
+
+  const toggleTheme = useCallback(() => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(nextTheme)
+  }, [setTheme, theme])
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -31,7 +38,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
   }, [theme])
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   )

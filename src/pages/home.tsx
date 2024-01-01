@@ -1,21 +1,18 @@
-import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
-import { SearchForm } from '@/components/search'
-import Title from '@/components/ui/title'
+import SearchInput from '@/components/search-input'
 
-function HomePage() {
-  const navigate = useNavigate()
-
-  const onSubmit = (value: string) => {
-    navigate(`/search?q=${value}`)
-  }
-
+export default function HomePage() {
   return (
     <main className={'mx-auto max-w-3xl px-4 pt-40 md:px-0'}>
-      <Title text={'Github Explorer'} styles={'text-center mb-8 md:mb-4'} />
-      <SearchForm onSubmit={onSubmit} />
+      <motion.h1
+        className={'mb-8 text-center text-6xl font-semibold md:mb-4 md:leading-relaxed'}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
+        {'Github Explorer'}
+      </motion.h1>
+      <SearchInput />
     </main>
   )
 }
-
-export default HomePage

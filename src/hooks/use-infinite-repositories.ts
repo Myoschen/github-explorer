@@ -1,47 +1,43 @@
 import { useCallback, useEffect, useState } from 'react'
-import usePrevious from './use-previous'
-import { Repositories, Repository, Search } from '@saber2pr/types-github-api'
+import type { Endpoints } from '@octokit/types'
 import axios, { AxiosError } from 'axios'
+
+import usePrevious from '@/hooks/use-previous'
+
+type Response = Endpoints['GET /search/repositories']['response']['data']
+type Repository = Endpoints['GET /search/repositories']['response']['data']['items'][number]
 
 const PER_PAGE = 20
 
-function useInfiniteRepositories(query: string) {
+export default function useInfiniteRepositories(query: string | null) {
   const [isLoading, setIsLoading] = useState(true)
   const [hasMore, setHasMore] = useState(false)
   const [error, setError] = useState<AxiosError | null>(null)
   const [page, setPage] = useState(1)
-  const [repositories, setRepositories] = useState<Repositories>([])
+  const [repositories, setRepositories] = useState<Repository[]>([])
   const previousQuery = usePrevious(query)
 
-  const fetchRepositories = useCallback(
-    async (signal: AbortSignal) => {
-      try {
-        setIsLoading(true)
-        setError(null)
-        const response = await axios.get<Search<Repository>>(
+  const fetchRepositories = useCallback(async (signal: AbortSignal) => {
+    if (query === null) return
+    try {
+      setIsLoading(true)
+      setError(null)
+      const response = await axios.get<Response>(
           `https://api.github.com/search/repositories?q=${query}&per_page=${PER_PAGE}&page=${page}`,
-          {
-            signal: signal,
-          },
-        )
-        setRepositories(prev => [...prev, ...response.data.items])
-        setHasMore(response.data.total_count - page * PER_PAGE > 0)
+          { signal: signal },
+      )
+      setRepositories(prev => [...prev, ...response.data.items])
+      setHasMore(response.data.total_count - page * PER_PAGE > 0)
+    }
+    catch (error) {
+      if (axios.isAxiosError(error)) {
+        setError(error)
       }
-      catch (error) {
-        setRepositories([])
-        if (axios.isAxiosError(error)) {
-          setError(error)
-        }
-        else {
-          console.error(error)
-        }
-      }
-      finally {
-        setIsLoading(false)
-      }
-    },
-    [query, page],
-  )
+    }
+    finally {
+      setIsLoading(false)
+    }
+  }, [query, page])
 
   const nextPage = useCallback(() => {
     if (hasMore) setPage(prev => prev + 1)
@@ -52,7 +48,7 @@ function useInfiniteRepositories(query: string) {
       setRepositories([])
       setPage(1)
     }
-  }, [query])
+  }, [previousQuery, query])
 
   useEffect(() => {
     const controller = new AbortController()
@@ -60,7 +56,5 @@ function useInfiniteRepositories(query: string) {
     return () => controller.abort()
   }, [fetchRepositories])
 
-  return { isLoading, hasMore, error, nextPage, repositories }
+  return { isLoading, hasMore, error, repositories, nextPage }
 }
-
-export default useInfiniteRepositories
