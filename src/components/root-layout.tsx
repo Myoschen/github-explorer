@@ -6,7 +6,7 @@ import {
   SunIcon,
 } from '@radix-ui/react-icons'
 
-import ScrollToTopButton from '@/components/scroll-to-top-button'
+import ScrollToTop from '@/components/scroll-to-top'
 import { Button } from '@/components/ui'
 import Switch from '@/components/ui/switch'
 import { useTheme } from '@/stores/theme'
@@ -51,7 +51,7 @@ export default function RootLayout() {
           }}
         />
       </div>
-      <ScrollToTopButton />
+      <ScrollToTop />
     </div>
   )
 }

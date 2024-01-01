@@ -9,3 +9,15 @@ export function formatCount(count: number) {
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+
+export function throttle<T extends unknown[]>(callback: (...args: T) => void, delay = 500) {
+  let wait = false
+  return (...args: T) => {
+    if (wait) return
+    wait = true
+    setTimeout(() => {
+      callback(...args)
+      wait = false
+    }, delay)
+  }
+}
