@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { ChatBubbleIcon, CopyIcon, StarIcon } from '@radix-ui/react-icons'
 
-import { formatCount } from '@/utils/format'
+import { formatCount } from '@/lib/utils'
 
 interface Props {
   type: 'fork' | 'issue' | 'star'

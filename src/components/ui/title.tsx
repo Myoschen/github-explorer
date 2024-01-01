@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-import { cn } from '@/utils/classnames'
+import { cn } from '@/lib/utils'
 
 interface Props {
   text: string
