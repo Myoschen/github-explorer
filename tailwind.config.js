@@ -1,4 +1,5 @@
-import {whiteA, grayDark} from '@radix-ui/colors';
+import { grayDark, whiteA } from '@radix-ui/colors'
+import forms from '@tailwindcss/forms'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -17,5 +18,5 @@ export default {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
-};
+  plugins: [forms()],
+}
