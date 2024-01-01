@@ -1,5 +1,6 @@
 import { grayDark, whiteA } from '@radix-ui/colors'
 import forms from '@tailwindcss/forms'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -11,10 +12,8 @@ export default {
         ...whiteA,
         ...grayDark,
       },
-
       fontFamily: {
-        heading: ['Work Sans', 'sans-serif'],
-        paragraph: ['Mulish', 'sans-serif'],
+        sans: ['Inter Variable', ...fontFamily.sans],
       },
     },
   },

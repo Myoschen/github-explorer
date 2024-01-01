@@ -32,11 +32,11 @@ function RepositoryStat({ type, text, count }: Props) {
 
   return (
     <div className={'text-center'}>
-      <span className={'flex items-center gap-x-1 font-paragraph'}>
+      <span className={'flex items-center gap-x-1'}>
         {icon}
         {text}
       </span>
-      <div className={'font-heading text-xl font-medium md:text-3xl'}>
+      <div className={'text-xl font-medium md:text-3xl'}>
         {formattingCount}
       </div>
     </div>

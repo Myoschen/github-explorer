@@ -61,7 +61,7 @@ function RepositoryList({ query }: Props) {
       {hasMore
         ? (
           <div
-            className={'text-center font-heading text-xl sm:col-span-2'}
+            className={'text-center text-xl sm:col-span-2'}
             ref={lastElementRef}
           >
             {'more...'}

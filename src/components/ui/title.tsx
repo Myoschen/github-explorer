@@ -11,7 +11,7 @@ function Title({ text, styles }: Props) {
   return (
     <motion.h1
       className={cn(
-        'font-heading text-6xl font-semibold md:leading-relaxed',
+        'text-6xl font-semibold md:leading-relaxed',
         styles,
       )}
       initial={'hidden'}

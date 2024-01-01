@@ -32,12 +32,12 @@ function RepositoryCard({
       <div className={'flex flex-1 flex-col justify-between px-2 py-3'}>
         <div className={'mb-4 space-y-1'}>
           <Link to={`/repository/${id}`}>
-            <h2 className={'font-heading text-xl font-medium md:text-2xl'}>
+            <h2 className={'text-xl font-medium md:text-2xl'}>
               {name}
             </h2>
-            <span className={'font-heading text-sm text-gray8'}>{fullName}</span>
+            <span className={'text-sm text-gray8'}>{fullName}</span>
           </Link>
-          <p className={'line-clamp-2 font-paragraph text-sm md:text-base'}>
+          <p className={'line-clamp-2 text-sm md:text-base'}>
             {description}
           </p>
         </div>
