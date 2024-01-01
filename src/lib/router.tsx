@@ -1,7 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
 
 import RootLayout from '@/components/root-layout'
-import DetailPage from '@/pages/detail'
 import HomePage from '@/pages/home'
 import SearchPage from '@/pages/search'
 
@@ -12,7 +11,6 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: 'search', element: <SearchPage /> },
-      { path: 'repository/:id', element: <DetailPage /> },
     ],
   },
   {
