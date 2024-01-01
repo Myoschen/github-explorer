@@ -1,7 +1,9 @@
 {
   "name": "github-explorer",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Myoschen <myos.chen@gmail.com> (https://github.com/Myoschen)",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
