@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { ArrowUpIcon } from '@radix-ui/react-icons'
 import { AnimatePresence, motion } from 'framer-motion'
+import { ArrowUpIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { throttle } from '@/lib/utils'

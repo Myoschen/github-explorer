@@ -1,4 +1,4 @@
-import { ChatBubbleIcon, CopyIcon, StarIcon } from '@radix-ui/react-icons'
+import { CircleDotIcon, GitForkIcon, StarIcon } from 'lucide-react'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -40,7 +40,7 @@ export default function Repository({ ownerName, avatar, ownerUrl, name, descript
           <div className={'flex items-center justify-between'}>
             <div className={'text-center'}>
               <span className={'flex items-center gap-x-1'}>
-                <CopyIcon />
+                <GitForkIcon className={'size-4'} />
                 {'Forks'}
               </span>
               <div className={'text-xl font-medium md:text-3xl'}>
@@ -49,7 +49,7 @@ export default function Repository({ ownerName, avatar, ownerUrl, name, descript
             </div>
             <div className={'text-center'}>
               <span className={'flex items-center gap-x-1'}>
-                <ChatBubbleIcon />
+                <CircleDotIcon className={'size-4'} />
                 {'Issues'}
               </span>
               <div className={'text-xl font-medium md:text-3xl'}>
@@ -58,7 +58,7 @@ export default function Repository({ ownerName, avatar, ownerUrl, name, descript
             </div>
             <div className={'text-center'}>
               <span className={'flex items-center gap-x-1'}>
-                <StarIcon />
+                <StarIcon className={'size-4'} />
                 {'Stars'}
               </span>
               <div className={'text-xl font-medium md:text-3xl'}>

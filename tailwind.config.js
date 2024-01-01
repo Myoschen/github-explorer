@@ -1,5 +1,5 @@
-import forms from '@tailwindcss/forms'
 import { fontFamily } from 'tailwindcss/defaultTheme'
+import animate from 'tailwindcss-animate'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -52,5 +52,5 @@ export default {
       },
     },
   },
-  plugins: [forms()],
+  plugins: [animate],
 }

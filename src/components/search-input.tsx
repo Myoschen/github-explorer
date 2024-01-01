@@ -1,7 +1,7 @@
 import { type ChangeEvent, type KeyboardEvent, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { ArrowRightIcon, Cross2Icon, MagnifyingGlassIcon } from '@radix-ui/react-icons'
 import { motion } from 'framer-motion'
+import { ArrowRightIcon, SearchIcon, XIcon } from 'lucide-react'
 
 import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
@@ -32,7 +32,7 @@ export default function SearchInput() {
   return (
     <motion.div className={'relative'} layoutId={'search-input'}>
       <div className={'absolute left-2 top-1/2 -translate-y-1/2'}>
-        <MagnifyingGlassIcon className={'size-5'} />
+        <SearchIcon className={'size-5'} />
       </div>
       <Input
         className={'pl-8 pr-14'}
@@ -44,7 +44,7 @@ export default function SearchInput() {
         className={cn('absolute right-8 top-1/2 -translate-y-1/2 scale-0 transition-opacity hover:opacity-50', hasQuery && 'scale-100')}
         onClick={handleClean}
       >
-        <Cross2Icon className={'size-5'} />
+        <XIcon className={'size-5'} />
       </button>
       <button
         className={cn('absolute right-2 top-1/2 -translate-y-1/2 scale-0 transition-opacity hover:opacity-50', hasQuery && 'scale-100')}

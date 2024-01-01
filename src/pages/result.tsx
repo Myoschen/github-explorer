@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { ReloadIcon } from '@radix-ui/react-icons'
+import { Loader2Icon } from 'lucide-react'
 
 import Repository from '@/components/repository'
 import SearchInput from '@/components/search-input'
@@ -62,7 +62,7 @@ export default function ResultPage() {
         )}
         {hasMore && (
           <div ref={triggerRef} className={'p-4'}>
-            <ReloadIcon />
+            <Loader2Icon className={'animate-spin'} />
           </div>
         )}
       </div>
