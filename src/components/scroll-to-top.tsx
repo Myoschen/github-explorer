@@ -33,7 +33,7 @@ export default function ScrollToTop() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <Button onClick={scrollToTop}>
+            <Button size={'icon'} onClick={scrollToTop}>
               <ArrowUpIcon />
             </Button>
           </motion.div>
