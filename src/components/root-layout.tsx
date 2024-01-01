@@ -1,6 +1,4 @@
 import { Outlet } from 'react-router-dom'
-import ScrollToTopButton from './scroll-to-top-button'
-import { Button } from './ui'
 import {
   GitHubLogoIcon,
   IdCardIcon,
@@ -8,12 +6,13 @@ import {
   SunIcon,
 } from '@radix-ui/react-icons'
 
-import useDarkMode from '@/hooks/use-dark-mode'
+import ScrollToTopButton from '@/components/scroll-to-top-button'
+import { Button } from '@/components/ui'
+import Switch from '@/components/ui/switch'
+import { useTheme } from '@/stores/theme'
 
-import Switch from './ui/switch'
-
-function RootLayout() {
-  const [theme, setTheme] = useDarkMode()
+export default function RootLayout() {
+  const { theme, setTheme } = useTheme()
 
   return (
     <div className={'relative min-h-screen w-full bg-gray12 text-gray2 transition-colors dark:bg-gray3 dark:text-gray12'}>
@@ -56,4 +55,3 @@ function RootLayout() {
     </div>
   )
 }
-export default RootLayout

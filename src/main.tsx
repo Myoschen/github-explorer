@@ -6,9 +6,12 @@ import { RouterProvider } from 'react-router-dom'
 import '@fontsource-variable/inter'
 
 import router from '@/lib/router'
+import ThemeProvider from '@/stores/theme'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>,
 )

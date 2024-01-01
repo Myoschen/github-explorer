@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-function useLocalStorage<T>(key: string, initialValue: T) {
+export default function useLocalStorage<T>(key: string, initialValue: T) {
   const readValue = useCallback(() => {
     try {
       const item = localStorage.getItem(key)
@@ -21,13 +21,11 @@ function useLocalStorage<T>(key: string, initialValue: T) {
     catch (error) {
       console.error(error)
     }
-  }, [])
+  }, [key])
 
   useEffect(() => {
     setStoredValue(readValue())
-  }, [])
+  }, [readValue])
 
   return [storedValue, setValue] as const
 }
-
-export default useLocalStorage
