@@ -43,7 +43,7 @@ export default function ResultPage() {
   return (
     <main className={'mx-auto max-w-3xl px-4 py-16 md:px-0'}>
       <SearchInput />
-      <div className={'mt-8 grid gap-4 sm:grid-cols-2'}>
+      <div className={'mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2'}>
         {repositories.length > 0 && (
           repositories.map(repository => (
             <Repository
