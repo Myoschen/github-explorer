@@ -18,6 +18,7 @@ export default function SearchInput() {
       navigate(`/result?${params}`)
     }
     else {
+      window.scrollTo({ top: 0 })
       navigate('/')
     }
   }
@@ -30,7 +31,7 @@ export default function SearchInput() {
   }
 
   return (
-    <motion.div className={'relative'} layoutId={'search-input'}>
+    <motion.div className={'sticky top-4 z-10 sm:top-8'} layoutId={'search-input'}>
       <div className={'absolute left-2 top-1/2 -translate-y-1/2'}>
         <SearchIcon className={'size-5'} />
       </div>
